@@ -1,0 +1,108 @@
+body { /*Formato general al body*/
+	margin: 0 auto; /*para que no tenga márgenes con los bordes*/
+	background-image: url("../../assets/images/twitter_fondo.jpg"); /*imagen de fondo*/
+	background-size: cover; /*con eso cubre todo el fondo*/
+	font-family: 'Source Sans Pro', sans-serif; /*tipo de fuente*/
+}
+
+/*Formato del nav y sus elementos*/
+
+nav { /*formato general del nav*/
+	position: fixed; /*para que quede fijo*/
+	margin: 0 auto; 
+	z-index: 3; /*para que aparezca delante de las otras secciones al hacer scroll*/
+	width: 100%; /*ancho al 100% del body*/
+	background-color: #5B1CD0; 
+	padding-bottom: 0.1rem;
+}
+
+nav a .fa { /* formato general de los elementos fa*/
+	color: #FFFFFF; /*color blanco*/
+	font-size: 1.5rem; /*tamaño*/
+	padding: 1rem 0.5rem 1rem 0.5rem; /*separación entre ellos*/
+}
+
+nav a .fa-home { /*margen hacia la izquierda*/
+	padding-left: 2rem;
+}
+
+nav a .fa-search { /*margen hacia la derecha*/
+	padding-right: 12rem;
+}
+
+nav input {/*para posicionar y dimensionar el espacio de ingreso para búsqueda*/
+	padding: 0.5rem;
+	margin-left: 2rem; 
+	width: 47%;
+}
+
+.foto-perfil{ /* formato de la imagen de perfil*/
+	display: inline-block; /*para que se comporte como bloque en línea*/
+	height: 39px; /*ajuste de tamaño*/
+	vertical-align: middle; /*para centrarlo*/
+}
+
+nav button { /*formato general del botón*/
+	margin-left: 2.5rem; /*margen para ubicarlo*/
+	padding: 0.25rem; /*para darle el alto al botón*/
+	background-color: #FFFFFF; /* color*/
+}
+
+/*formato del header y sus elementos*/
+
+header { /*formato general del header*/
+	padding-top: 3rem; /*para posicionarlo bajo el nav*/
+	width: 25%; /*ancho*/
+	background-color: #66B7F1;
+	color: #FFFFFF; /*color blanco letras*/
+	text-align: center; /*centrar el texto*/
+	border: 0.5rem solid #FFFFFF; /*borde*/
+	display: inline-block; /*para que sea bloque en línea*/
+	margin-top: 5rem; /*margin desde arriba*/
+	margin-left: 1rem; /*margen desde abajo*/
+}
+
+header .perfil-a { /* formato de la foto de perfil*/
+	height: 70px; /*alto de la foto*/
+	width: 70px; /*ancho de la foto*/
+}
+
+header .gatita { /*para que el a funcione como bloque*/
+	display: block;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+header .mini { /*mini secciones*/
+	padding-left: 1.5rem; /*distancia a la izquierda*/
+	padding-right: 1.5rem; /*distancia a la derecha*/
+	display: inline-block; /* para que se comporten como bloques en línea*/
+}
+
+/*formato de la section*/
+
+section { /*formato general de la sección*/
+	width: 60%; /*ancho*/
+	margin-top: 5rem; /*margen desde arriba*/
+	display: inline-block; /*para que se comporte como bloque en línea*/
+	padding-left: 2rem; /*para que tenga una distancia del header*/
+	vertical-align: top; /*para que su contenido se posicione arriba*/
+}
+
+section #thinkTwitt { /*formato del input*/
+	display: block; /*para que se comporte como bloque*/
+    width: 100%; /*ancho*/
+}
+
+section #twittear { /*formato del botón twittear*/
+	margin-top: 1.5rem; /*para distanciarlo desde arriba*/
+	margin-bottom: 1.5rem; /*para distanciarlo de los comentarios*/
+	background-color: #FFFFFF; /*color blanco*/
+}
+
+section .twitt { /*formato general de los twitts*/
+	border: 0.5rem solid #66B7F1;
+    background: #FFFFFF; /*color de fondo blanco de los twitts*/
+    color: #000000; /*color de letra de los twitts*/
+}
+
