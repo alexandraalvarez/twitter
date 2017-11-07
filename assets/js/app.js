@@ -1,13 +1,15 @@
 window.onload = function() { /*onload es para que cargue completamente la página antes de comenzar a ejecutar JS*/
     var twittearButton = document.getElementsByClassName("twittear")[0]; /*para usarla cada vez que se presione el botón 
     twittear */
-    var twitterInput = document.getElementsByClassName("thinkTwitt")[0]; /*esto es para seleccionar el contenido que introduzco 
-    en el input*/
-    var newTwitts = document.getElementsByClassName("timeLine")[0]; /*ésto es para el contenedor que recibirá los nuevos twitters*/
+    var twitterInput = document.getElementsByClassName("thinkTwitt")[0]; /*esto es para seleccionar el contenido que 
+    introduzco en el input*/
+    var newTwitts = document.getElementsByClassName("timeLine")[0]; /*ésto es para el contenedor que recibirá los nuevos 
+    twitters*/
+
     twittearButton.onclick = function() { /*onclick sirve para cuando se haga click sobre el botón twittear*/ 
-        if (twitterInput.value == "") { /*si el valor ingresado en el cuadro input está vacío*/
-            alert("Ingresa un texto");
-        } else { /*si hay algo escrito en el cuadro*/
+        if(twitterInput.value == ""){/*si el valor ingresado en el cuadro input está vacío*/
+            document.getElementById("twittear").disabled = true;
+        } else {/*si hay algo escrito en el cuadro*/
             var twittersDiv = document.createElement("div"); /*para crear el div contenedor de los twitters*/
             var nameSpan = document.createElement("span");/*para crear un elemento en línea que me permita ingresar el nombre 
             del usuario que comentó*/
@@ -26,14 +28,59 @@ window.onload = function() { /*onload es para que cargue completamente la págin
             publica el twitt*/
             hourSpan.textContent = new Date();/* para agregarle la hora al span que mostrará la hora de la publicación del 
             twitt*/
-            twittParagraph.textContent = twitterInput.value; /*para que el contenido del párrafo del div que lleva los twitters 
-            tenga como contenido lo que el usuario ingresó*/
+            twittParagraph.textContent = twitterInput.value; /*para que el contenido del párrafo del div que lleva los 
+            twitters tenga como contenido lo que el usuario ingresó*/
             newTwitts.insertBefore(twittersDiv, newTwitts.children[0]);/*para insertar los nuevos twitters justo antes del 
             último que se ingresó*/
         }
     }
-}
 
+        var thinkTwitt = document.getElementsByClassName("thinkTwitt")[0];/*variable que permite enfocarse en el contenido que ingresa 
+        el usuario desde el primero*/
+            
+        thinkTwitt.onkeydown = function() {/*cuando se ingresa contenido en el textarea (thinkTwitt), se activa la función 
+            al apretar una tecla*/ 
+            var realCounter = document.getElementsByClassName("counter")[0]; /*contador propiamente tal*/
+            var maxCharacters = 140; /*número de caracteres máximo*/
+            realCounter.innerHTML = maxCharacters; /*mostrar los caracteres que faltan desde el principio*/
+            var charsLeft = maxCharacters-thinkTwitt.value.length;/*variable que representa los números de caracteres que quedan*/
+            realCounter.innerHTML = charsLeft;/*guarda la diferencia (número) de los caracteres máximos contra los caracteres ingresados*/    
+            if (charsLeft <= 20 && charsLeft >=10) { /*si el contador está entre 20 y 10*/
+                realCounter.style.color = "#F7FE2E"; /*cambia el color a amarillo*/                  
+            } else if (charsLeft <= 10 && charsLeft >= 1) { /*si el contador está entre 10 y 1*/
+                realCounter.style.color = "#FF8000"; /*cambia el color a naranjo*/        
+            } else if (charsLeft <= 0 ) { /*si el contador es menor o igual a 0*/
+                    document.getElementById("twittear").disabled = true;/*boton desactivado*/
+            } 
+        }
+    } 
+
+
+
+/*para desabilitar button
+button.disabled = true;
+
+function disab(){
+ if(comments === "" ){
+   button.disabled = false;
+ } else{
+   button.disabled = true;
+
+
+// show characters left at start
+     charLeftLabel.innerHTML = maxChar;
+
+     // update while typing
+     msg.onkeydown = function(){
+       setTimeout(function(){
+         charLeft.innerHTML = maxChar - msg.value.length;
+
+         // whether or not to display warning class based on characters left
+         var warnLabel = msg.value.length >= maxChar - maxCharWarn ? " warning" : "";
+         charLeft.className = charLeftLabel + warnLabel;
+       }, 1); 
+     };
+}*/
 
 /*document.appenChild(twittersDiv); para ingresar los div de cada twitter al documento, ¿o basta con el insertBefore?
 

@@ -89,14 +89,19 @@ section { /*formato general de la sección*/
 	vertical-align: top; /*para que su contenido se posicione arriba*/
 }
 
-section #thinkTwitt { /*formato del input*/
+section #thinkTwitt { /*formato del textarea*/
 	display: block; /*para que se comporte como bloque*/
     width: 100%; /*ancho*/
 }
 
+section .counter {
+	color: #04B404;
+	font-weight: 600;
+}
+
 section #twittear { /*formato del botón twittear*/
-	margin-top: 1.5rem; /*para distanciarlo desde arriba*/
-	margin-bottom: 1.5rem; /*para distanciarlo de los comentarios*/
+	margin-top: 0; /*para distanciarlo desde arriba*/
+	margin-bottom: 1rem; /*para distanciarlo de los comentarios*/
 	background-color: #FFFFFF; /*color blanco*/
 }
 

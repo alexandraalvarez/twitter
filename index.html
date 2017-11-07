@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">  
-        <script src="assets/js/app.js" type="application/javascript"></script>
+        
     </head>
     <body>
         <nav>
@@ -37,10 +37,12 @@
             </div>
         </header>
         <section>
-            <input id="thinkTwitt" class="thinkTwitt" placeholder="¿Que estás pensando?"> <!--podría ser text area en vez de button-->
+            <textarea id="thinkTwitt" class="thinkTwitt" rows="5" cols="35" placeholder="¿Que estás pensando?"></textarea>
+            <p class="counter">140</p>
             <button id="twittear" class="twittear">Twittear</button>
             <div class="timeLine" name="lineaDeTiempo"></div>
         </section>
+        <script src="assets/js/app.js" type="application/javascript"></script>
     </body>
 
 </html>
