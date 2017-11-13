@@ -89,7 +89,8 @@ section { /*formato general de la sección*/
 	vertical-align: top; /*para que su contenido se posicione arriba*/
 }
 
-section #thinkTwitt { /*formato del textarea*/
+section .thinkTwitt { /*formato del textarea*/
+	overflow: hidden;
 	display: block; /*para que se comporte como bloque*/
     width: 100%; /*ancho*/
 }
